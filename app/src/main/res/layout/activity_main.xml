@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.yao.storehomeui.ContentView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/store_background3">
+
+    <com.yao.storehomeui.BackScrollView
+        android:id="@+id/back_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_title_height">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="100dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingTop="0dp">
+
+            <TextView
+                android:id="@+id/store_head"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/mine_image"
+                android:drawableLeft="@mipmap/ic_launcher"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:text="这是商店的简介"
+                android:textColor="#454545"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/store_info"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/backgroud2"
+                android:gravity="center_vertical"
+                android:textColor="#454545"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </com.yao.storehomeui.BackScrollView>
+
+    <com.yao.storehomeui.TopContentView
+        android:id="@+id/top_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_title_height"
+        android:background="#fff"
+        android:visibility="visible">
+
+        <com.yao.storehomeui.ScrollRightListView
+            android:id="@+id/first_menu_list"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:background="#f2f2f2"
+            android:divider="#a1a1a1"
+            android:dividerHeight="1px"
+            android:scrollbars="none" />
+
+        <com.yao.storehomeui.GoodsRecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/menu_layout"
+            android:layout_toRightOf="@+id/first_menu_list"
+            android:background="#f2f2f2"
+            android:listSelector="#00000000" />
+
+        <com.yao.storehomeui.MenuGridView
+            android:id="@+id/second_menu_list"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/menu_layout"
+            android:layout_toRightOf="@+id/first_menu_list"
+            android:background="#fff"
+            android:divider="@null"
+            android:horizontalSpacing="5dp"
+            android:numColumns="3"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/menu_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/first_menu_list"
+            android:background="#fff">
+
+            <LinearLayout
+                android:id="@+id/menu_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/def_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="综合排序"
+                    android:textColor="#676767"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#a1a1a1" />
+
+                <TextView
+                    android:id="@+id/number_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="销量排序"
+                    android:textColor="#676767"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#a1a1a1" />
+
+                <TextView
+                    android:id="@+id/price_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="价格排序"
+                    android:textColor="#676767"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/second_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="全部"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="#a1a1a1" />
+        </RelativeLayout>
+    </com.yao.storehomeui.TopContentView>
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_title_height"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="便利店"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/bottom_cover_back"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0"
+        android:scaleType="fitXY"
+        android:src="@drawable/tuoyuan" />
+
+    <ImageView
+        android:id="@+id/bottom_cover_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:alpha="0"
+        android:src="@drawable/shanghua" />
+</com.yao.storehomeui.ContentView>
